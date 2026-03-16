@@ -2,7 +2,7 @@ Project Report: Interactive College History & Courses Quiz
 Student Name: Aditya Bisht
 Section: 6-ABC 
 Enrollment Number : 06114803123
-GitHub Repository: [Insert Your Github Link Here]
+GitHub Repository: https://github.com/Adityax-07/School-Quiz-Project
 
 
                                  REPORT
