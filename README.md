@@ -20,10 +20,3 @@ An interactive, web-based quiz application designed to test your knowledge about
 - **CSS3:** Custom styling, CSS variables, Flexbox layout, and CSS animations (No external frameworks).
 - **JavaScript (ES6+):** DOM manipulation, state management, timer logic, and interactivity.
 
-## 💻 How to Run Locally
-
-Since this project uses plain HTML, CSS, and JS, you don't need any complex development environment to run it.
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Adityax-07/School-Quiz-Project.git
