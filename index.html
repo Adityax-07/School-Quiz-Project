@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech University History & Courses Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="app-header">
+        <h1>Tech University Trivia</h1>
+        <!-- Simulated Admin link for requirement context -->
+        <a href="#" class="admin-link" aria-label="Admin Login">Admin Access</a>
+    </header>
+
+    <main class="quiz-container">
+        <!-- Start Screen -->
+        <section id="start-screen" class="screen active" aria-live="polite">
+            <h2>Welcome to the Tech University Quiz!</h2>
+            <p>Test your knowledge about our college's history, courses, and legacy.</p>
+            <ul class="rules-list">
+                <li>10 random questions.</li>
+                <li>15 seconds per question.</li>
+                <li>Instant feedback provided.</li>
+            </ul>
+            <button id="start-btn" class="primary-btn">Start Quiz</button>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="screen" aria-live="polite">
+            <div class="header-stats">
+                <div class="progress-container" aria-label="Quiz Progress">
+                    <div id="progress-bar"></div>
+                </div>
+                <div class="stats-text">
+                    <span id="question-counter">Question 1/10</span>
+                    <span id="timer-display" class="timer">Time: 15s</span>
+                </div>
+            </div>
+
+            <div class="question-section animate-fade">
+                <h2 id="question-text">Question goes here?</h2>
+            </div>
+
+            <div id="options-container" class="options-section" role="group" aria-label="Answer Options">
+                <!-- Options injected by JS -->
+            </div>
+
+            <div id="feedback-section" class="feedback hidden" aria-live="assertive">
+                <p id="feedback-text"></p>
+                <p id="feedback-explanation"></p>
+            </div>
+
+            <div class="action-section">
+                <button id="submit-btn" class="primary-btn" disabled>Submit Answer</button>
+                <button id="next-btn" class="primary-btn hidden">Next Question</button>
+            </div>
+        </section>
+
+        <!-- Result Screen -->
+        <section id="result-screen" class="screen" aria-live="polite">
+            <h2>Quiz Completed!</h2>
+            <div class="score-display">
+                <p>Your Score:</p>
+                <h3 id="final-score">0/10</h3>
+                <p id="score-message"></p>
+            </div>
+            <div class="result-actions">
+                <button id="retake-btn" class="primary-btn">Retake Quiz</button>
+                <button id="share-btn" class="secondary-btn">Share Results</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

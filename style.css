@@ -1,0 +1,259 @@
+/* --- Variables & Reset --- */
+:root {
+    --primary-color: #004aad;
+    --secondary-color: #ff914d;
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --correct-color: #28a745;
+    --incorrect-color: #dc3545;
+    --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* CSS Box Model */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Layout & Structure --- */
+.app-header {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.admin-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.admin-link:hover {
+    opacity: 1;
+}
+
+.quiz-container {
+    background: white;
+    width: 90%;
+    max-width: 650px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Screens & Display --- */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- UI Elements --- */
+.rules-list {
+    margin: 1rem 0 2rem 1.5rem;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover:not(:disabled) {
+    background-color: #003680;
+    transform: translateY(-2px);
+}
+
+.primary-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: #e67d3b;
+}
+
+/* --- Quiz Interactive Elements --- */
+.header-stats {
+    margin-bottom: 1.5rem;
+}
+
+.progress-container {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0%;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.stats-text {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #555;
+}
+
+.timer.pulse {
+    color: var(--incorrect-color);
+    animation: pulse 1s infinite;
+}
+
+.options-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 1.5rem 0;
+}
+
+.option-btn {
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    background: transparent;
+    border-radius: var(--border-radius);
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option-btn:hover:not(.disabled) {
+    border-color: var(--primary-color);
+    background-color: #f0f8ff;
+}
+
+.option-btn.selected {
+    border-color: var(--primary-color);
+    background-color: #e6f2ff;
+    transform: scale(1.02);
+}
+
+.option-btn.correct {
+    border-color: var(--correct-color);
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.option-btn.incorrect {
+    border-color: var(--incorrect-color);
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.option-btn.disabled {
+    pointer-events: none;
+}
+
+/* --- Feedback Section --- */
+.feedback {
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    font-weight: bold;
+    animation: slideUp 0.4s ease-out;
+}
+
+.feedback.success {
+    background-color: #d4edda;
+    border-left: 5px solid var(--correct-color);
+    color: #155724;
+}
+
+.feedback.error {
+    background-color: #f8d7da;
+    border-left: 5px solid var(--incorrect-color);
+    color: #721c24;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-fade {
+    animation: fadeIn 0.4s ease-in;
+}
